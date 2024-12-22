@@ -1,0 +1,44 @@
+"use client";
+
+import { useState } from "react";
+
+const VCardGenerator = () => {
+  const [vCardLink, setVCardLink] = useState("https://vcards.infyom.com/marlonbrasil");
+
+  const handleAddToContact = () => {
+    alert("VCard added to your contacts successfully!");
+  };
+
+  return (
+    <section className="py-8 bg-gray-100">
+      <div className="container mx-auto px-4">
+        <h2 className="text-center text-2xl font-bold text-gray-800 mb-4">Create Your VCard</h2>
+        <div className="w-16 h-1 mx-auto bg-orange-500 mb-6"></div>
+        <div className="flex flex-col items-center bg-white shadow-md rounded-lg p-6">
+          <div className="flex items-center w-full mb-4">
+            <input
+              type="text"
+              value={vCardLink}
+              readOnly
+              className="flex-1 border border-gray-300 rounded-l-lg px-4 py-2 text-gray-700"
+            />
+            <button
+              onClick={() => navigator.clipboard.writeText(vCardLink)}
+              className="bg-orange-500 text-white px-4 rounded-r-lg hover:bg-orange-600 transition"
+            >
+              Copy
+            </button>
+          </div>
+          <button
+            onClick={handleAddToContact}
+            className="bg-orange-500 text-white px-6 py-2 rounded-lg font-bold hover:bg-orange-600 transition"
+          >
+            Add To Contact
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default VCardGenerator;

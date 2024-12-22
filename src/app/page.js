@@ -10,6 +10,7 @@ import Products from './components/products';
 import index from './components/index'
 import ViewServiceButton from './components/service-btn';
 import ShopButton from './components/shop-btn';
+import Testimonials from './components/testimonial';
 
 // Define the Home function
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
       <OurServices />
       <ViewServiceButton />
       <Products />
+      <Testimonials />
       <ShopButton />
       <Appointment />
       <Contact />
