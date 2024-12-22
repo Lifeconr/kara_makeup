@@ -16,6 +16,9 @@ const Navbar = () => {
           <Link href="/appointment" className="hover:text-orange-500 transition">
             Appointment
           </Link>
+          <Link href="/product" className="hover:text-orange-500 transition">
+            Products
+          </Link>
           <Link href="/contact-us" className="hover:text-orange-500 transition">
             Contact
           </Link>

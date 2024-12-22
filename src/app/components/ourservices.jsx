@@ -34,7 +34,10 @@ const OurServices = () => {
 
   const handleServiceSelection = (serviceName) => {
     setSelectedService(serviceName);
-    alert(`You selected the ${serviceName} service!`);
+
+    setTimeout(() => {
+      alert(`You selected the ${serviceName} service!`);
+    }, 100);
   };
 
   return (
@@ -68,16 +71,6 @@ const OurServices = () => {
               <p className="text-gray-500">{service.description}</p>
             </button>
           ))}
-        </div>
-
-        {/* Button to View Service Menu */}
-        <div className="flex justify-center mt-8">
-          <a
-            href="/ourservices"
-            className="bg-orange-500 text-white py-2 px-4 rounded-md font-semibold hover:bg-orange-600 transition"
-          >
-            View Service Menu
-          </a>
         </div>
       </div>
     </section>

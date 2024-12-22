@@ -1,6 +1,6 @@
-import AppointmentPage from "../components/Appointment";
-import OurServices from "../components/Appointment"; // Update path based on your structure
-import Navbar from "../components/Navbar";
+import AppointmentPage from "../components/appointment";
+import OurServices from "../components/appointment"; // Update path based on your structure
+import Navbar from "../components/navbar";
 
 export default function OurServicesPage() {
   return (

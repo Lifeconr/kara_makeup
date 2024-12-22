@@ -1,7 +1,7 @@
-import Navbar from "../components/Navbar";
-import ContactUsPage from "../components/ContactUs";
+import Navbar from "../components/navbar";
+import ContactUsPage from "../components/contact-us";
 
-export default function OurServicesPage() {
+export default function contactUsPage() {
   return (
     <>
       <Navbar />

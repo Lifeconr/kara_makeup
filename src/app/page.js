@@ -1,13 +1,15 @@
 // Import the components
-import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
-import AboutCard from './components/AboutCard';
+import Navbar from './components/navbar';
+import HeroSection from './components/hero';
+import AboutCard from './components/about-card';
 import OurServices from './components/ourservices';
-import Footer from './components/Footer';
-import Appointment from './components/Appointment';
-import Contact from './components/ContactUs'
-import Products from './components/Product';
+import Footer from './components/footer';
+import Appointment from './components/appointment';
+import Contact from './components/contact-us'
+import Products from './components/products';
 import index from './components/index'
+import ViewServiceButton from './components/service-btn';
+import ShopButton from './components/shop-btn';
 
 // Define the Home function
 export default function Home() {
@@ -18,7 +20,9 @@ export default function Home() {
       <HeroSection />
       <AboutCard />
       <OurServices />
+      <ViewServiceButton />
       <Products />
+      <ShopButton />
       <Appointment />
       <Contact />
       <Footer />
