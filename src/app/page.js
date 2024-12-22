@@ -2,12 +2,12 @@
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutCard from './components/AboutCard';
-import OurServices from './pages/OurServices';
+import OurServices from './components/ourservices';
 import Footer from './components/Footer';
-import Appointment from './pages/Appointment';
-import Contact from './pages/ContactUs'
-import Products from './pages/Product';
-import index from './pages/index'
+import Appointment from './components/Appointment';
+import Contact from './components/ContactUs'
+import Products from './components/Product';
+import index from './components/index'
 
 // Define the Home function
 export default function Home() {

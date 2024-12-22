@@ -10,13 +10,13 @@ const Navbar = () => {
           <Link href="/" className="hover:text-orange-500 transition">
             Home
           </Link>
-          <Link href='/OurServices' className="hover:text-orange-500 transition">
+          <Link href='/our-services' className="hover:text-orange-500 transition">
             Our Services
           </Link>
           <Link href="/appointment" className="hover:text-orange-500 transition">
             Appointment
           </Link>
-          <Link href="/contact" className="hover:text-orange-500 transition">
+          <Link href="/contact-us" className="hover:text-orange-500 transition">
             Contact
           </Link>
         </div>

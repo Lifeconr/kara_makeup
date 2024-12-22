@@ -1,9 +1,8 @@
-// src/app/pages/ContactUs.jsx
 "use client"; // Ensures the component is client-side
 
 import { useState } from "react";
 
-export default function ContactUs() {
+const ContactUsPage = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -18,13 +17,18 @@ export default function ContactUs() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Message sent! ${JSON.stringify(formData, null, 2)}`);
+    if (!formData.fullName || !formData.email || !formData.message) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+    alert(`Message sent! \n\n${JSON.stringify(formData, null, 2)}`);
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white rounded-lg shadow-lg p-6 max-w-md w-full">
         <h1 className="text-xl font-semibold text-center mb-4 text-gray-800">Contact Us</h1>
+        {/* Form */}
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <input
@@ -56,7 +60,6 @@ export default function ContactUs() {
               onChange={handleChange}
               placeholder="Phone Number"
               className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-orange-500 focus:outline-none"
-              required
             />
           </div>
           <div className="mb-6">
@@ -81,3 +84,4 @@ export default function ContactUs() {
     </div>
   );
 }
+export default ContactUsPage;
