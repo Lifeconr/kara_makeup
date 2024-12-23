@@ -1,4 +1,4 @@
-"use client"; // Ensures the component is client-side
+"use client"; // Ensures the component is client-side 
 
 import { useState } from "react";
 
@@ -41,14 +41,14 @@ const OurServices = () => {
   };
 
   return (
-    <section className="py-12 bg-white">
+    <section className="py-12 bg-gray-100">
       <div className="container mx-auto px-6">
         {/* Section Title */}
         <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-8">
           Our Services
         </h2>
         {/* Underline */}
-        <div className="w-16 h-1 mx-auto bg-orange-500 mb-10"></div>
+        <div className="w-16 h-1 mx-auto bg-red-800 mb-10"></div>
 
         {/* Service Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -56,19 +56,22 @@ const OurServices = () => {
             <button
               key={index}
               onClick={() => handleServiceSelection(service.name)}
-              className={`flex flex-col items-center text-center border rounded-lg p-6 shadow-sm transition-shadow ${
+              className={`flex flex-col items-center text-center border rounded-lg p-6 shadow-sm transition-transform ${
                 selectedService === service.name
-                  ? "border-orange-500 bg-orange-100"
-                  : "border-gray-300 hover:shadow-md"
+                  ? "scale-105"
+                  : "hover:scale-105"
               }`}
+              style={{
+                backgroundColor: "#800e13",
+                color: "white",
+                borderColor: "#800e13",
+              }}
             >
-              <div className="text-orange-500 text-4xl mb-4">
+              <div className="text-white text-4xl mb-4">
                 <i className={service.icon}></i>
               </div>
-              <h3 className="text-xl font-semibold text-gray-700 mb-2">
-                {service.name}
-              </h3>
-              <p className="text-gray-500">{service.description}</p>
+              <h3 className="text-xl font-semibold mb-2">{service.name}</h3>
+              <p>{service.description}</p>
             </button>
           ))}
         </div>

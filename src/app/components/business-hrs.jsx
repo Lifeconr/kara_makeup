@@ -12,15 +12,15 @@ const BusinessHours = () => {
   ];
 
   return (
-    <section className="py-8 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-center text-2xl font-bold text-gray-800 mb-4">Business Hours</h2>
-        <div className="w-16 h-1 mx-auto bg-orange-500 mb-6"></div>
-        <div className="bg-white shadow-md rounded-lg p-4">
+    <section className="py-12 bg-gray-100">
+      <div className="container mx-auto px-4 max-w-screen-lg">
+        <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-8">Business Hours</h2>
+        <div className="w-16 h-1 mx-auto bg-red-800 mb-10"></div>
+        <div className="bg-white shadow-md rounded-lg p-6">
           {hours.map((item, index) => (
             <div
               key={index}
-              className="flex justify-between border-b py-2 px-4 last:border-0"
+              className="flex justify-between border-b py-2 last:border-0 text-sm md:text-base"
             >
               <span className="text-gray-700 font-medium">{item.day}</span>
               <span className="text-gray-500">{item.time}</span>

@@ -1,6 +1,6 @@
 import Navbar from './navbar';
 import HeroSection from './hero';
-import AboutCard from './about-card';
+import AboutCard from './kara-info';
 import Footer from './footer';
 import OurServices from './ourservices';
 

@@ -1,5 +1,8 @@
 "use client";
-
+import Image from "next/image";
+import blog1 from "../asset/img/blog1.jpg";
+import blog2 from "../asset/img/blog2.jpg";
+import blog3 from "../asset/img/blog3.jpg";
 import { useState } from "react";
 
 export default function BlogPage() {
@@ -10,7 +13,7 @@ export default function BlogPage() {
       date: "November 12, 2023",
       description:
         "Here at Rework'd, we don't campaign for Black Friday. Instead, we're introducing new programs to help you campaign all year-round...",
-      image: "/campaign-schedule.jpg",
+      image: blog1,
       link: "/blog/campaign-schedule",
     },
     {
@@ -19,7 +22,7 @@ export default function BlogPage() {
       date: "November 12, 2023",
       description:
         "We're excited to announce some new changes and exclusive services that are designed to take your marketing and branding strategies to the next level...",
-      image: "/happening-2024.jpg",
+      image: blog2,
       link: "/blog/happening-2024",
     },
     {
@@ -28,7 +31,7 @@ export default function BlogPage() {
       date: "September 02, 2023",
       description:
         "What's the Secret to Mega-Brands' Holiday Success? When it comes to holiday shopping, some brands seem to have a magical touch...",
-      image: "/holiday-shopping.jpg",
+      image: blog3, // Local path
       link: "/blog/holiday-shopping",
     },
     {
@@ -37,7 +40,7 @@ export default function BlogPage() {
       date: "August 18, 2023",
       description:
         "In a crowded market, building a brand that truly stands out is crucial. Here are some strategies that can help you get started...",
-      image: "/brand-building.jpg",
+      image: blog3,
       link: "/blog/brand-building",
     },
   ];
@@ -56,13 +59,13 @@ export default function BlogPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gray-100 py-12">
       <div className="container mx-auto px-6">
         {/* Page Title */}
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
           Blog
         </h1>
-        <div className="w-16 h-1 mx-auto bg-orange-500 mb-6"></div>
+        <div className="w-16 h-1 mx-auto bg-red-800 mb-6"></div>
 
         {/* Blog Cards */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -71,11 +74,16 @@ export default function BlogPage() {
               key={blog.id}
               className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
-              <img
-                src={blog.image}
-                alt={blog.title}
-                className="w-full h-48 object-cover"
-              />
+              <div className="relative w-full h-48">
+                {/* Next.js Image component for optimization */}
+                <Image
+                  src={blog.image}
+                  alt={blog.title}
+                  layout="fill" // Make the image fill the container
+                  objectFit="cover" // Ensure the image covers the area
+                  className="rounded-t-lg"
+                />
+              </div>
               <div className="p-4">
                 <p className="text-sm text-gray-500 mb-2">{blog.date}</p>
                 <h3 className="text-lg font-bold text-gray-800 mb-2">
@@ -84,7 +92,7 @@ export default function BlogPage() {
                 <p className="text-gray-600 mb-4">{blog.description}</p>
                 <a
                   href={blog.link}
-                  className="text-orange-500 font-semibold hover:underline"
+                  className="text-red-800 font-semibold hover:underline"
                 >
                   Read more
                 </a>
@@ -112,7 +120,7 @@ export default function BlogPage() {
               onClick={() => handlePageChange(index + 1)}
               className={`px-3 py-1 rounded-md border ${
                 currentPage === index + 1
-                  ? "bg-orange-500 text-white"
+                  ? "bg-red-800 text-white"
                   : "bg-white text-gray-700 hover:bg-gray-100"
               }`}
             >

@@ -1,28 +1,31 @@
 "use client";
-
+import Image from "next/image";
+import powder from "../asset/img/powder.jpg";
+import lipstick from "../asset/img/lipsticks.jpg";
+import maskara from "../asset/img/maskara.jpg";
 import { useState } from "react";
 
 const products = [
   {
     id: 1,
-    name: "Makeup Kit",
-    description: "There are many variations of passages of Lorem Ipsum",
+    name: "Powder Products",
+    description: "There are many variations of passages of Lorem Ipsum.",
     price: 1250,
-    image: "/makeup-kit.jpg", // Replace with the actual image path
+    image: powder,
   },
   {
     id: 2,
-    name: "Clothes",
-    description: "There are many variations of passages of Lorem Ipsum",
+    name: "Lipstick Products",
+    description: "There are many variations of passages of Lorem Ipsum.",
     price: 1400,
-    image: "/clothes.jpg", // Replace with the actual image path
+    image: lipstick,
   },
   {
     id: 3,
-    name: "Skincare Products",
-    description: "There are many variations of passages of Lorem Ipsum",
+    name: "Maskara Products",
+    description: "There are many variations of passages of Lorem Ipsum.",
     price: 900,
-    image: "/skincare.jpg", // Replace with the actual image path
+    image: maskara,
   },
 ];
 
@@ -33,7 +36,7 @@ export default function Products() {
     setSelectedProduct(product);
     setTimeout(() => {
       alert(`You selected: ${product.name}`);
-    }, 300); // Alert after 300ms for smooth color change
+    }, 300); // Slight delay for smooth experience
   };
 
   return (
@@ -44,7 +47,7 @@ export default function Products() {
           Products
         </h2>
         {/* Underline */}
-        <div className="w-16 h-1 mx-auto bg-orange-500 mb-10"></div>
+        <div className="w-16 h-1 mx-auto bg-red-800 mb-10"></div>
 
         {/* Products Grid */}
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
@@ -52,20 +55,30 @@ export default function Products() {
             <button
               key={product.id}
               onClick={() => handleProductSelection(product)}
-              className={`flex flex-col bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden ${
+              className={`flex flex-col bg-white border rounded-lg shadow-sm hover:shadow-lg transition-transform transform ${
                 selectedProduct?.id === product.id
-                  ? "border-orange-500 bg-orange-100"
-                  : "border-gray-300"
-              }`}
+                  ? "border-red-800 bg-orange-100 scale-105"
+                  : "border-gray-300 hover:scale-105"
+              } overflow-hidden`}
             >
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-48 object-cover"
-              />
+              {/* Product Image */}
+              <div className="relative w-full h-48">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  className="object-cover"
+                  layout="fill"
+                />
+              </div>
+              {/* Product Details */}
               <div className="p-4">
-                <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
-                <div className="mt-4 text-orange-500 font-bold text-xl">${product.price}</div>
+                <h3 className="text-lg font-semibold text-gray-800">
+                  {product.name}
+                </h3>
+                <p className="text-gray-500 mt-2">{product.description}</p>
+                <div className="mt-4 text-red-800 font-bold text-xl">
+                  ${product.price}
+                </div>
               </div>
             </button>
           ))}
@@ -74,11 +87,16 @@ export default function Products() {
         {/* Selected Product Information */}
         {selectedProduct && (
           <div className="mt-10 bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-bold text-gray-800">Selected Product:</h3>
-            <p className="text-orange-500 font-bold mt-2">
+            <h3 className="text-xl font-bold text-gray-800">
+              Selected Product:
+            </h3>
+            <p className="text-gray-600 mt-2">
               <strong>Name:</strong> {selectedProduct.name}
             </p>
-            <p className="text-orange-500 font-bold mt-2">
+            <p className="text-gray-600 mt-2">
+              <strong>Description:</strong> {selectedProduct.description}
+            </p>
+            <p className="text-red-800 font-bold mt-2">
               <strong>Price:</strong> ${selectedProduct.price}
             </p>
           </div>

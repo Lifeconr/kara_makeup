@@ -37,7 +37,7 @@ const ContactUsPage = () => {
               value={formData.fullName}
               onChange={handleChange}
               placeholder="Full Name"
-              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-orange-500 focus:outline-none"
+              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-red-800 focus:outline-none"
               required
             />
           </div>
@@ -48,7 +48,7 @@ const ContactUsPage = () => {
               value={formData.email}
               onChange={handleChange}
               placeholder="Email Address"
-              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-orange-500 focus:outline-none"
+              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-red-800 focus:outline-none"
               required
             />
           </div>
@@ -59,7 +59,7 @@ const ContactUsPage = () => {
               value={formData.phone}
               onChange={handleChange}
               placeholder="Phone Number"
-              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-orange-500 focus:outline-none"
+              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-red-800 focus:outline-none"
             />
           </div>
           <div className="mb-6">
@@ -68,14 +68,14 @@ const ContactUsPage = () => {
               value={formData.message}
               onChange={handleChange}
               placeholder="Your Message"
-              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-orange-500 focus:outline-none"
+              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-red-800 focus:outline-none"
               rows="4"
               required
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-orange-500 text-white py-2 px-4 rounded-md font-semibold hover:bg-orange-600 transition"
+            className="w-full bg-red-800 text-white py-2 px-4 rounded-md font-semibold hover:bg-red-900 transition"
           >
             Send Message
           </button>
@@ -83,5 +83,5 @@ const ContactUsPage = () => {
       </div>
     </div>
   );
-}
+};
 export default ContactUsPage;
