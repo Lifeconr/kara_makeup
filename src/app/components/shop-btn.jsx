@@ -6,7 +6,7 @@ const ShopButton = () => {
     <div className="flex justify-center mt-8">
       <Link
         href="/product"
-        className="bg-orange-500 text-white py-2 px-4 rounded-md font-semibold hover:bg-orange-600 transition"
+        className="bg-red-800 text-white py-2 px-4 rounded-md font-semibold hover:bg-red-900 transition"
       >
         Shop Now
       </Link>

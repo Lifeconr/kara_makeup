@@ -1,11 +1,10 @@
 import Image from "next/image";
 import profilepic from "../asset/img/profilepic.jpg";
 
-const karaInfo = () => {
+const KaraInfo  = () => {
   return (
     <div className="container mx-auto px-4 py-8 bg-edf6f9">
       <div className="shadow-md rounded-lg p-6 bg-white">
-        {/* Profile Section */}
         <div className="flex flex-col md:flex-row items-center md:items-start">
           <Image
             src={profilepic}
@@ -22,14 +21,12 @@ const karaInfo = () => {
           </div>
         </div>
 
-        {/* Description Section */}
         <p className="mt-4 text-gray-700 font-serif">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry’s standard dummy text
           ever since the 1500s.
         </p>
 
-        {/* Contact Information */}
         <div className="container mx-auto mt-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="flex items-center bg-gray-100 p-4 rounded-md">
@@ -57,4 +54,4 @@ const karaInfo = () => {
   );
 };
 
-export default karaInfo;
+export default KaraInfo;

@@ -6,7 +6,7 @@ import Qrcode from "../asset/img/qrcode.png";
 export default function QRCodePage() {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = Qrcode.src; // Use the src property of the imported image
+    link.href = Qrcode.src; 
     link.download = "MyQRCode.png";
     link.click();
   };

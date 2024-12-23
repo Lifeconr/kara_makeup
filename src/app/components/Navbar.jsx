@@ -10,22 +10,22 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className="space-x-4 hidden md:flex">
-          <Link href="/" className="text-800e13 font-serif hover:text-gray-500 transition">
+          <Link href="/" className="text-800e13 font-serif hover:text-red-800 transition">
             Home
           </Link>
-          <Link href="/our-services" className="text-800e13 font-serif hover:text-gray-500 transition">
+          <Link href="/our-services" className="text-800e13 font-serif hover:text-red-800 transition">
             Our Services
           </Link>
-          <Link href="/appointment" className="text-800e13 font-serif hover:text-gray-500 transition">
+          <Link href="/appointment" className="text-800e13 font-serif hover:text-red-800 transition">
             Appointment
           </Link>
-          <Link href="/product" className="text-800e13 font-serif hover:text-gray-500 transition">
+          <Link href="/product" className="text-800e13 font-serif hover:text-red-800 transition">
             Products
           </Link>
-          <Link href="/blog" className="text-800e13 font-serif hover:text-gray-500 transition">
+          <Link href="/blog" className="text-800e13 font-serif hover:text-red-800 transition">
             Blog
           </Link>
-          <Link href="/contact-us" className="text-800e13 font-serif hover:text-gray-500 transition">
+          <Link href="/contact-us" className="text-800e13 font-serif hover:text-red-800 transition">
             Contact Us
           </Link>
         </div>

@@ -75,7 +75,7 @@ export default function BlogPage() {
               className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative w-full h-48">
-                {/* Next.js Image component for optimization */}
+                {}
                 <Image
                   src={blog.image}
                   alt={blog.title}
@@ -101,7 +101,7 @@ export default function BlogPage() {
           ))}
         </div>
 
-        {/* Pagination */}
+        {}
         <div className="flex justify-center items-center mt-6 space-x-2">
           <button
             onClick={() => handlePageChange(currentPage - 1)}

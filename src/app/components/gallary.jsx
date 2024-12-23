@@ -15,7 +15,7 @@ export default function Gallery() {
       setCurrentIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000); // Change slide every 3 seconds
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -39,8 +39,8 @@ export default function Gallery() {
               src={image}
               alt={`Slide ${index}`}
               className="object-cover rounded-lg"
-              width={400} // Set width
-              height={250} // Set height
+              width={400} 
+              height={250} 
             />
           </div>
         ))}

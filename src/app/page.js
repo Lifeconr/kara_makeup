@@ -1,7 +1,7 @@
 // Import the components
 import Navbar from './components/navbar';
 import HeroSection from './components/hero';
-import karaInfo from './components/kara-info';
+import KaraInfo from './components/kara-info';
 import OurServices from './components/ourservices';
 import Footer from './components/footer';
 import Appointment from './components/appointment';
@@ -20,10 +20,9 @@ import VCardGenerator from './components/vcard';
 export default function Home() {
   return (
     <div>
-      {/* Add the imported components in order */}
       <Navbar />
       <HeroSection />
-      <karaInfo />
+      <KaraInfo />
       <Gallary/>
       <OurServices />
       <ViewServiceButton />
