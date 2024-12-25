@@ -2,13 +2,10 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentPath, setCurrentPath] = useState("");
 
-  // Ensure `currentPath` is only set on the client side
   useEffect(() => {
     if (typeof window !== "undefined") {
       setCurrentPath(window.location.pathname);
@@ -23,9 +20,9 @@ const Navbar = () => {
   return (
     <nav className="bg-edf6f9 bg-white sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <h1 className="text-lg font-bold text-800e13 font-serif">Kara</h1>
+        <h1 className="text-lg font-bold text-red-800 font-serif">Kara</h1>
 
-        {/* Desktop Navigation Links */}
+        {/* Navigation Links */}
         <div className="space-x-8 hidden md:flex">
           <Link href="/" className={getLinkClasses("/")}>
             Home
