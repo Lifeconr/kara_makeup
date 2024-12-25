@@ -1,15 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const router = useRouter();
+  const [currentPath, setCurrentPath] = useState("");
+
+  // Ensure `currentPath` is only set on the client side
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setCurrentPath(window.location.pathname);
+    }
+  }, []);
 
   const getLinkClasses = (path) =>
-    router.pathname === path
+    currentPath === path
       ? "text-red-800 font-serif font-bold border-b-2 border-red-800"
       : "text-800e13 font-serif hover:text-red-800 transition";
 
@@ -38,42 +45,8 @@ const Navbar = () => {
           <Link href="/contact-us" className={getLinkClasses("/contact-us")}>
             Contact Us
           </Link>
-        </div>
-
-        {/* Mobile Menu Toggle Button */}
-        <div className="md:hidden">
-          <button
-            className="text-800e13 font-serif"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? "Close" : "Menu"}
-          </button>
-        </div>
+        </div>        
       </div>
-
-      {/* Mobile Navigation Links */}
-      {isMenuOpen && (
-        <div className="bg-white px-4 py-3 space-y-2 md:hidden">
-          <Link href="/" className={getLinkClasses("/")} onClick={() => setIsMenuOpen(false)}>
-            Home
-          </Link>
-          <Link href="/our-services" className={getLinkClasses("/our-services")} onClick={() => setIsMenuOpen(false)}>
-            Our Services
-          </Link>
-          <Link href="/appointment" className={getLinkClasses("/appointment")} onClick={() => setIsMenuOpen(false)}>
-            Appointment
-          </Link>
-          <Link href="/product" className={getLinkClasses("/product")} onClick={() => setIsMenuOpen(false)}>
-            Products
-          </Link>
-          <Link href="/blog" className={getLinkClasses("/blog")} onClick={() => setIsMenuOpen(false)}>
-            Blog
-          </Link>
-          <Link href="/contact-us" className={getLinkClasses("/contact-us")} onClick={() => setIsMenuOpen(false)}>
-            Contact Us
-          </Link>
-        </div>
-      )}
     </nav>
   );
 };
