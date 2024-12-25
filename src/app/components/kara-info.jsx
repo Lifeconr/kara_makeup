@@ -14,7 +14,7 @@ const KaraInfo  = () => {
             className="rounded-full mb-4 md:mb-0 md:mr-6"
           />
           <div>
-            <h2 className="text-2xl font-bold text-800e13 font-serif">
+            <h2 className="text-2xl font-bold text-red-800 font-serif">
               Kara Frederick
             </h2>
             <p className="text-gray-600 font-serif">Make-up Artist</p>
@@ -38,19 +38,19 @@ const KaraInfo  = () => {
               <span className="material-icons text-800e13 text-xl mr-4">
                 email
               </span>
-              <p className="text-800e13 font-serif">kara@gmail.com</p>
+              <p className="text-red-800 font-serif">kara@gmail.com</p>
             </div>
             <div className="flex items-center bg-gray-100 p-4 rounded-md">
               <span className="material-icons text-800e13 text-xl mr-4">
                 phone
               </span>
-              <p className="text-800e13 font-serif">+251 91 111 1111</p>
+              <p className="text-red-800 font-serif">+251 91 111 1111</p>
             </div>
             <div className="flex items-center bg-gray-100 p-4 rounded-md">
               <span className="material-icons text-800e13 text-xl mr-4">
                 location_on
               </span>
-              <p className="text-800e13 font-serif">Ethiopia, AA</p>
+              <p className="text-red-800 font-serif">Ethiopia, AA</p>
             </div>
           </div>
         </div>
