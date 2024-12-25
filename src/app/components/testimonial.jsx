@@ -44,25 +44,21 @@ export default function Testimonials() {
   return (
     <section className="py-16 bg-gray-100">
       <div className="container mx-auto px-6 max-w-4xl">
-        {/* Section Title */}
         <h2 className="text-center text-3xl font-bold text-gray-800 mb-8">
           Testimonials
         </h2>
-        {/* Underline */}
         <div className="w-20 h-1 mx-auto bg-red-800 mb-12"></div>
-
-        {/* Carousel */}
         <div className="relative bg-white rounded-lg shadow-lg p-10">
-          {/* Testimonial Content */}
+          
           <div className="text-center">
             <div className="flex justify-center mb-6">
-              {/* Image with rounded circle and object-cover */}
+              
               <Image
                 src={testimonials[currentIndex].image}
                 alt={testimonials[currentIndex].name}
                 className="w-28 h-28 rounded-full shadow-md object-cover"
-                width={112} // 28 * 4 = 112px (Adjust width to match your design)
-                height={112} // 28 * 4 = 112px (Adjust height to match your design)
+                width={112} 
+                height={112} 
               />
             </div>
             <p className="text-gray-600 mb-6 italic text-lg leading-relaxed">

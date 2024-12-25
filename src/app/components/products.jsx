@@ -34,22 +34,17 @@ export default function Products() {
 
   const handleProductSelection = (product) => {
     setSelectedProduct(product);
-    setTimeout(() => {
-      alert(`You selected: ${product.name}`);
-    }, 300); // Slight delay for smooth experience
+
   };
 
   return (
     <section className="py-12 bg-gray-100">
       <div className="container mx-auto px-6">
-        {/* Section Title */}
         <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-8">
           Products
         </h2>
-        {/* Underline */}
         <div className="w-16 h-1 mx-auto bg-red-800 mb-10"></div>
 
-        {/* Products Grid */}
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {products.map((product) => (
             <button
@@ -61,7 +56,6 @@ export default function Products() {
                   : "border-gray-300 hover:scale-105"
               } overflow-hidden`}
             >
-              {/* Product Image */}
               <div className="relative w-full h-48">
                 <Image
                   src={product.image}
@@ -70,7 +64,6 @@ export default function Products() {
                   layout="fill"
                 />
               </div>
-              {/* Product Details */}
               <div className="p-4">
                 <h3 className="text-lg font-semibold text-gray-800">
                   {product.name}
@@ -83,8 +76,7 @@ export default function Products() {
             </button>
           ))}
         </div>
-
-        {/* Selected Product Information */}
+        
         {selectedProduct && (
           <div className="mt-10 bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-xl font-bold text-gray-800">

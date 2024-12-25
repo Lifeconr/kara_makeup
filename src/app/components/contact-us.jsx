@@ -21,7 +21,7 @@ const ContactUsPage = () => {
       alert("Please fill in all required fields.");
       return;
     }
-    alert(`Message sent! \n\n${JSON.stringify(formData, null, 2)}`);
+    alert(`Message sent!`);
   };
 
   return (

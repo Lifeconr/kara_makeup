@@ -19,7 +19,7 @@ import VCardGenerator from './components/vcard';
 // Define the Home function
 export default function Home() {
   return (
-    <div>
+    <div className="min-h-screen bg-gray-100" >
       <Navbar />
       <HeroSection />
       <KaraInfo />

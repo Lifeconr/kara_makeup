@@ -3,13 +3,12 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="bg-edf6f9 shadow-md sticky top-0 z-50">
+    <nav className="bg-edf6f9 bg-white sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        {/* Logo */}
-        <h1 className="text-lg font-bold text-800e13 font-serif">Makeup Artist</h1>
+        <h1 className="text-lg font-bold text-800e13 font-serif">KARA</h1>
 
         {/* Navigation Links */}
-        <div className="space-x-4 hidden md:flex">
+        <div className="space-x-8 hidden md:flex">
           <Link href="/" className="text-800e13 font-serif hover:text-red-800 transition">
             Home
           </Link>

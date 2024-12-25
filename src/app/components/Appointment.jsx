@@ -48,11 +48,9 @@ export default function AppointmentPage() {
             </div>
           </div>
           <button
-            onClick={() =>
-              alert(selectedDate && selectedHour
-                ? `Appointment set for ${selectedDate} at ${selectedHour}`
-                : "Please select a date and time.")
-            }
+            onClick={() => {
+              // other functionality
+            }}
             className="w-full bg-red-800 text-white py-2 px-4 rounded-md font-semibold hover:bg-red-900 transition"
           >
             Make An Appointment

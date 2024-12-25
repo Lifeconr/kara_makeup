@@ -4,8 +4,9 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import gallary1 from "../asset/img/gallary1.jpg";
 import gallary3 from "../asset/img/gallary3.jpg";
+import galla5 from "../asset/img/gal1.jpg";
 
-const images = [gallary1, gallary3];
+const images = [gallary1, gallary3, galla5];
 
 export default function Gallery() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -23,8 +24,8 @@ export default function Gallery() {
     <div
       className="relative mx-auto rounded-lg shadow-md"
       style={{
-        maxWidth: "500px", // Maximum width of the gallery
-        backgroundColor: "#edf6f9", // Background color
+        maxWidth: "400px", 
+        backgroundColor: "#edf6f9", 
       }}
     >
       <div
@@ -39,7 +40,7 @@ export default function Gallery() {
               src={image}
               alt={`Slide ${index}`}
               className="object-cover rounded-lg"
-              width={400} 
+              width={300} 
               height={250} 
             />
           </div>

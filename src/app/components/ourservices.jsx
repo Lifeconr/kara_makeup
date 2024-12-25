@@ -1,4 +1,4 @@
-"use client"; // Ensures the component is client-side 
+"use client";
 
 import { useState } from "react";
 
@@ -34,23 +34,17 @@ const OurServices = () => {
 
   const handleServiceSelection = (serviceName) => {
     setSelectedService(serviceName);
-
-    setTimeout(() => {
-      alert(`You selected the ${serviceName} service!`);
-    }, 100);
   };
 
   return (
     <section className="py-12 bg-gray-100">
       <div className="container mx-auto px-6">
-        {/* Section Title */}
         <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-8">
           Our Services
         </h2>
-        {/* Underline */}
+
         <div className="w-16 h-1 mx-auto bg-red-800 mb-10"></div>
 
-        {/* Service Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <button
