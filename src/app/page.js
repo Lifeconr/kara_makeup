@@ -1,11 +1,9 @@
 // Import the components
-import Navbar from './components/navbar';
 import HeroSection from './components/hero';
 import KaraInfo from './components/kara-info';
 import OurServices from './components/ourservices';
-import Footer from './components/footer';
 import Appointment from './components/appointment';
-import Contact from './components/contact-us'
+import Contact from './components/contact-us';
 import Products from './components/products';
 import ViewServiceButton from './components/service-btn';
 import ShopButton from './components/shop-btn';
@@ -20,7 +18,6 @@ import VCardGenerator from './components/vcard';
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100" >
-      <Navbar />
       <HeroSection />
       <KaraInfo />
       <Gallary/>
@@ -35,7 +32,6 @@ export default function Home() {
       <QRCodePage />
       <Contact />
       <VCardGenerator />
-      <Footer />
     </div>
   );
 }
