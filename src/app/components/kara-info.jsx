@@ -35,19 +35,19 @@ const KaraInfo  = () => {
         <div className="container mx-auto mt-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="flex items-center bg-gray-100 p-4 rounded-md">
-              <span className="material-icons text-800e13 text-xl mr-4">
+              <span className="material-icons text-red-800 text-xl mr-4">
                 email
               </span>
               <p className="text-red-800 font-serif">kara@gmail.com</p>
             </div>
             <div className="flex items-center bg-gray-100 p-4 rounded-md">
-              <span className="material-icons text-800e13 text-xl mr-4">
+              <span className="material-icons text-red-800 text-xl mr-4">
                 phone
               </span>
               <p className="text-red-800 font-serif">+251 91 111 1111</p>
             </div>
             <div className="flex items-center bg-gray-100 p-4 rounded-md">
-              <span className="material-icons text-800e13 text-xl mr-4">
+              <span className="material-icons text-red-800 text-xl mr-4">
                 location_on
               </span>
               <p className="text-red-800 font-serif">Ethiopia, AA</p>
