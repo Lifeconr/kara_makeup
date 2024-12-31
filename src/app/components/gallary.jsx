@@ -21,13 +21,11 @@ export default function Gallery() {
   }, []);
 
   return (
-    <div
-      className="relative mx-auto rounded-lg shadow-md"
-      style={{
-        maxWidth: "400px", 
-        backgroundColor: "#edf6f9", 
-      }}
-    >
+    <div id="gallery" className="relative mx-auto rounded-lg shadow-md bg-[#edf6f9] max-w-lg">
+      <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+        Gallery
+      </h2>
+      <div className="w-16 h-1 mx-auto bg-red-800 mb-6"></div>
       <div
         className="flex transition-transform duration-700"
         style={{
@@ -35,13 +33,13 @@ export default function Gallery() {
         }}
       >
         {images.map((image, index) => (
-          <div key={index} className="w-full flex-shrink-0">
+          <div key={index} className="flex justify-center w-full flex-shrink-0">
             <Image
               src={image}
               alt={`Slide ${index}`}
               className="object-cover rounded-lg"
-              width={300} 
-              height={250} 
+              width={300}
+              height={250}
             />
           </div>
         ))}

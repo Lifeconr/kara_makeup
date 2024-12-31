@@ -1,9 +1,9 @@
 import Image from "next/image";
 import profilepic from "../asset/img/pp.jpg";
 
-const KaraInfo  = () => {
+const KaraInfo = () => {
   return (
-    <div className="container mx-auto px-4 py-8 bg-edf6f9">
+    <div className="container mx-auto px-4 py-8 bg-[#edf6f9]"> {/* Fixed color for Tailwind compatibility */}
       <div className="shadow-md rounded-lg p-6 bg-white">
         <div className="flex flex-col md:flex-row items-center md:items-start">
           <Image
@@ -27,13 +27,9 @@ const KaraInfo  = () => {
           ever since the 1500s.
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry’s standard dummy text
-          ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry’s standard dummy text
-          ever since the 1500s.
-        </p>
-
-        <div className="container mx-auto mt-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+         </p>
+        <div className="mt-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="flex items-center bg-gray-100 p-4 rounded-md">
               <span className="material-icons text-red-800 text-xl mr-4">
                 email

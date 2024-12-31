@@ -6,15 +6,21 @@ export default function AppointmentPage() {
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedHour, setSelectedHour] = useState("");
 
-  const availableHours = ["8:10 - 10:00", "10:10 - 12:00", "12:10 - 14:00", "14:10 - 16:00"];
+  const availableHours = [
+    "8:10 - 10:00",
+    "10:10 - 12:00",
+    "12:10 - 14:00",
+    "14:10 - 16:00"
+  ];
 
   return (
-    <section className="py-12 bg-gray-100">
-      <div className="container mx-auto px-6">
+    <section id="appointment" className="py-8 bg-gray-100">
+      <div className="container mx-auto px-4 sm:px-8">
+        <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+          Make An Appointment
+        </h2>
+        <div className="w-16 h-1 mx-auto bg-red-800 mb-6"></div>
         <div className="bg-white rounded-lg shadow-md p-6 max-w-lg mx-auto">
-          <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-8">
-            Make An Appointment
-          </h2>
           <div className="mb-4">
             <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-2">
               Date:
@@ -36,7 +42,7 @@ export default function AppointmentPage() {
                 <button
                   key={index}
                   onClick={() => setSelectedHour(hour)}
-                  className={`py-2 px-4 text-sm font-medium border rounded-md ${
+                  className={`py-2 px-4 text-sm font-medium border rounded-md transition-colors duration-200 ${
                     selectedHour === hour
                       ? "bg-red-800 text-white border-red-800"
                       : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
@@ -49,7 +55,7 @@ export default function AppointmentPage() {
           </div>
           <button
             onClick={() => {
-              // other functionality
+              // Add functionality for making an appointment
             }}
             className="w-full bg-red-800 text-white py-2 px-4 rounded-md font-semibold hover:bg-red-900 transition"
           >

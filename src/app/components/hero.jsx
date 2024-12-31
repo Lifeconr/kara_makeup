@@ -16,11 +16,13 @@ const HeroSection = () => {
       />
 
       {/* Overlay Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white text-center px-4">
-        <h1 className="text-4xl font-bold sm:text-5xl">Kara Frederick</h1>
-        <h2 className="text-lg sm:text-2xl mt-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </h2>
+      <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white text-center px-4 py-6">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+          Welcome to Kara Ferderic
+        </h1>
+        <p className="text-base sm:text-lg mb-6">
+          Your go-to make-up artist for every occasion.
+        </p>
       </div>
 
       {/* Social Media Links */}

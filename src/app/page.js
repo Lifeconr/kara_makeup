@@ -22,9 +22,9 @@ export default function Home() {
       <KaraInfo />
       <Gallary/>
       <OurServices />
-      <ViewServiceButton />
+
       <Products />
-      <ShopButton />
+
       <Testimonials />
       <BusinessHours />
       <Appointment />

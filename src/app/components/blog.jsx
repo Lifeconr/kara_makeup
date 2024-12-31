@@ -31,22 +31,13 @@ export default function BlogPage() {
       date: "September 02, 2023",
       description:
         "What's the Secret to Mega-Brands' Holiday Success? When it comes to holiday shopping, some brands seem to have a magical touch...",
-      image: blog3, // Local path
+      image: blog3, 
       link: "/blog/holiday-shopping",
-    },
-    {
-      id: 4,
-      title: "How to Build a Brand That Stands Out",
-      date: "August 18, 2023",
-      description:
-        "In a crowded market, building a brand that truly stands out is crucial. Here are some strategies that can help you get started...",
-      image: blog3,
-      link: "/blog/brand-building",
     },
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
-  const blogsPerPage = 3;
+  const blogsPerPage = 1;
   const totalPages = Math.ceil(blogs.length / blogsPerPage);
 
   const currentBlogs = blogs.slice(
@@ -59,12 +50,11 @@ export default function BlogPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-12">
-      <div className="container mx-auto px-6">
-        {/* Page Title */}
-        <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
+    <div id="blog" className="bg-gray-100">
+      <div className="container mx-auto px-4 sm:px-8">
+        <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-4">
           Blog
-        </h1>
+        </h2>
         <div className="w-16 h-1 mx-auto bg-red-800 mb-6"></div>
 
         {/* Blog Cards */}
@@ -75,12 +65,11 @@ export default function BlogPage() {
               className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative w-full h-48">
-                {}
                 <Image
                   src={blog.image}
                   alt={blog.title}
-                  layout="fill" // Make the image fill the container
-                  objectFit="cover" // Ensure the image covers the area
+                  layout="fill" 
+                  objectFit="cover"
                   className="rounded-t-lg"
                 />
               </div>
@@ -101,14 +90,14 @@ export default function BlogPage() {
           ))}
         </div>
 
-        {}
-        <div className="flex justify-center items-center mt-6 space-x-2">
+        {/* Pagination */}
+        <div className="flex justify-center items-center mt-6 space-x-4">
           <button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
             className={`px-4 py-2 rounded-md border border-gray-300 ${
               currentPage === 1
-                ? "text-gray-400"
+                ? "text-gray-400 cursor-not-allowed"
                 : "text-gray-700 hover:bg-gray-100"
             }`}
           >
@@ -132,7 +121,7 @@ export default function BlogPage() {
             disabled={currentPage === totalPages}
             className={`px-4 py-2 rounded-md border border-gray-300 ${
               currentPage === totalPages
-                ? "text-gray-400"
+                ? "text-gray-400 cursor-not-allowed"
                 : "text-gray-700 hover:bg-gray-100"
             }`}
           >

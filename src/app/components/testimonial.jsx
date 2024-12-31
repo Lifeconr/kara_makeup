@@ -10,19 +10,19 @@ const testimonials = [
     id: 1,
     name: "Zendaya Coleman",
     image: testm1, 
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
+    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum.",
   },
   {
     id: 2,
     name: "Zara John",
     image: testm2, 
-    text: "Lorem Ipsum is a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+    text: "Lorem Ipsum is a piece of classical Latin literature.",
   },
   {
     id: 3,
     name: "Emily Davis",
     image: testm3,
-    text: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.",
+    text: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a.",
   },
 ];
 
@@ -30,29 +30,23 @@ export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1));
   };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1));
   };
 
   return (
-    <section className="py-16 bg-gray-100">
-      <div className="container mx-auto px-6 max-w-4xl">
-        <h2 className="text-center text-3xl font-bold text-gray-800 mb-8">
+    <section id="testimonials"  className="py-8 bg-gray-100">
+      <div className="container mx-auto px-4 sm:px-8 max-w-4xl">
+        <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-4">
           Testimonials
         </h2>
-        <div className="w-20 h-1 mx-auto bg-red-800 mb-12"></div>
+        <div className="w-16 h-1 mx-auto bg-red-800 mb-6"></div>
         <div className="relative bg-white rounded-lg shadow-lg p-10">
-          
           <div className="text-center">
             <div className="flex justify-center mb-6">
-              
               <Image
                 src={testimonials[currentIndex].image}
                 alt={testimonials[currentIndex].name}
