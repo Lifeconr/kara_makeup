@@ -15,8 +15,8 @@ const VCardGenerator = () => {
       <div className="container mx-auto px-4 sm:px-8 max-w-screen-md">
         <h2 className="text-center text-2xl font-bold text-gray-800 mb-4">Create Your VCard</h2>
         <div className="w-16 h-1 mx-auto bg-red-800 mb-6"></div>
-        <div className="flex flex-col items-center bg-white shadow-md rounded-lg p-6">
-          <div className="flex items-center w-full mb-4">
+        <div className="flex flex-col items-center bg-white shadow-md rounded-lg p-6 w-full">
+          <div className="flex items-center mb-4 my-4 ">
             <input
               type="text"
               value={vCardLink}
@@ -25,13 +25,13 @@ const VCardGenerator = () => {
             />
             <button
               onClick={handleCopy}
-              className="bg-red-800 text-white px-4 rounded-r-lg hover:bg-red-900 transition"
+              className="bg-red-800 text-white px-2 rounded-r-lg hover:bg-red-900 transition"
             >
               Copy
             </button>
           </div>
           <button
-            className="bg-red-800 text-white px-6 py-2 rounded-lg font-bold hover:bg-red-900 transition"
+            className="bg-red-800 text-white px-6 py-4 rounded-lg font-bold hover:bg-red-900 transition"
             onClick={() => {
               // Add functionality to add to contacts if needed
             }}
