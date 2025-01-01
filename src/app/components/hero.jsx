@@ -1,10 +1,10 @@
 import Image from "next/image";
 import bgPic from "../asset/img/bg-pic.jpg";
-import { FaInstagram, FaFacebookF, FaTelegramPlane } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaTelegramPlane, FaLinkedin } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
-    <div className="relative py-12">
+    <div className="relative py-8">
       {/* Background Image */}
       <Image
         src={bgPic}
@@ -26,7 +26,7 @@ const HeroSection = () => {
       </div>
 
       {/* Social Media Links */}
-      <div className="absolute top-4 right-4 flex space-x-4">
+      <div className="absolute bottom-4 justify-center flex space-x-12 px-12">
         <a
           href="https://instagram.com"
           target="_blank"
@@ -50,6 +50,14 @@ const HeroSection = () => {
           aria-label="Telegram"
         >
           <FaTelegramPlane className="text-white text-2xl hover:text-gray-300 transition" />
+        </a>
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <FaLinkedin className="text-white text-2xl hover:text-gray-300 transition" />
         </a>
       </div>
     </div>

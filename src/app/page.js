@@ -5,8 +5,6 @@ import OurServices from './components/ourservices';
 import Appointment from './components/Appointment';
 import Contact from './components/contact-us';
 import Products from './components/products';
-import ViewServiceButton from './components/service-btn';
-import ShopButton from './components/shop-btn';
 import Testimonials from './components/testimonial';
 import Gallary from './components/gallary';
 import BusinessHours from './components/business-hrs';
@@ -22,9 +20,7 @@ export default function Home() {
       <KaraInfo />
       <Gallary/>
       <OurServices />
-
       <Products />
-
       <Testimonials />
       <BusinessHours />
       <Appointment />
