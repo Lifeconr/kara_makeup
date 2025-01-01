@@ -31,7 +31,7 @@ export default function BlogPage() {
       date: "September 02, 2023",
       description:
         "What's the Secret to Mega-Brands' Holiday Success? When it comes to holiday shopping, some brands seem to have a magical touch...",
-      image: blog3, 
+      image: blog3,
       link: "/blog/holiday-shopping",
     },
   ];
@@ -50,44 +50,46 @@ export default function BlogPage() {
   };
 
   return (
-    <div id="blog" className="bg-gray-100">
-      <div className="container mx-auto px-4 sm:px-8">
+    <div id="blog" className="bg-gray-100 ">
+      <div className="container mx-auto px-4 sm:px-6">
         <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-          Blog
+          Blogs
         </h2>
         <div className="w-16 h-1 mx-auto bg-red-800 mb-6"></div>
 
         {/* Blog Cards */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {currentBlogs.map((blog) => (
-            <div
-              key={blog.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
-            >
-              <div className="relative w-full h-48">
-                <Image
-                  src={blog.image}
-                  alt={blog.title}
-                  layout="fill" 
-                  objectFit="cover"
-                  className="rounded-t-lg"
-                />
+        <div className="container mx-auto px-8">
+          <div className="grid gap-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-1">
+            {currentBlogs.map((blog) => (
+              <div
+                key={blog.id}
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow max-w-sm md:max-w-lg mx-auto"
+              >
+                <div className="relative w-full h-48">
+                  <Image
+                    src={blog.image}
+                    alt={blog.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-t-lg"
+                  />
+                </div>
+                <div className="p-4">
+                  <p className="text-sm text-gray-500 mb-2">{blog.date}</p>
+                  <h3 className="text-lg font-bold text-gray-800 mb-2">
+                    {blog.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4">{blog.description}</p>
+                  <a
+                    href={blog.link}
+                    className="text-red-800 font-semibold hover:underline"
+                  >
+                    Read more
+                  </a>
+                </div>
               </div>
-              <div className="p-4">
-                <p className="text-sm text-gray-500 mb-2">{blog.date}</p>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">
-                  {blog.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{blog.description}</p>
-                <a
-                  href={blog.link}
-                  className="text-red-800 font-semibold hover:underline"
-                >
-                  Read more
-                </a>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* Pagination */}

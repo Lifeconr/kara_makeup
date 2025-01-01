@@ -4,7 +4,7 @@ import { FaInstagram, FaFacebookF, FaTelegramPlane } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
-    <div className="relative">
+    <div className="relative py-12">
       {/* Background Image */}
       <Image
         src={bgPic}
