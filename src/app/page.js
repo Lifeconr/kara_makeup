@@ -3,11 +3,10 @@ import HeroSection from './components/hero';
 import KaraInfo from './components/kara-info';
 import OurServices from './components/ourservices';
 import Appointment from './components/Appointment';
-import Contact from './components/contact-us';
+
 import Products from './components/products';
 import Testimonials from './components/testimonial';
 import Gallary from './components/gallary';
-import BusinessHours from './components/business-hrs';
 import BlogPage from './components/blog';
 import QRCodePage from './components/QR-code';
 import VCardGenerator from './components/vcard';
@@ -22,11 +21,9 @@ export default function Home() {
       <OurServices />
       <Products />
       <Testimonials />
-      <BusinessHours />
       <Appointment />
       <BlogPage />
       <QRCodePage />
-      <Contact />
       <VCardGenerator />
     </div>
   );

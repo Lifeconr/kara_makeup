@@ -4,7 +4,7 @@ import { FaInstagram, FaFacebookF, FaTelegramPlane, FaLinkedin } from "react-ico
 
 const HeroSection = () => {
   return (
-    <div className="relative py-8">
+    <div className="relative">
       {/* Background Image */}
       <Image
         src={bgPic}
