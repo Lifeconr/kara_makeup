@@ -65,7 +65,7 @@ export default function BlogPage() {
                 key={blog.id}
                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow max-w-sm md:max-w-lg mx-auto"
               >
-                <div className="relative w-full h-48">
+                <div className="relative w-full h-52">
                   <Image
                     src={blog.image}
                     alt={blog.title}

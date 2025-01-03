@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { FaBrush, FaCut, FaSpa, FaHandSparkles } from "react-icons/fa";
 import { useState } from "react";
 
@@ -10,26 +10,30 @@ const OurServices = () => {
       name: "Makeup",
       description: "There are many variations of passages of.",
       icon: <FaBrush />,
+      link: "https://example.com/makeup",
     },
     {
       name: "Hair Styling",
       description: "There are many variations of passages of.",
       icon: <FaCut />,
+      link: "https://example.com/hairstyling",
     },
     {
       name: "Facials",
       description: "There are many variations of passages of.",
       icon: <FaSpa />,
+      link: "https://example.com/facials",
     },
     {
       name: "Manicure",
       description: "There are many variations of passages of.",
       icon: <FaHandSparkles />,
+      link: "https://example.com/manicure",
     },
   ];
 
   const handleServiceSelection = (serviceName) => {
-    setSelectedService(serviceName);
+    setSelectedService((prev) => (prev === serviceName ? "" : serviceName));
   };
 
   return (
@@ -56,11 +60,17 @@ const OurServices = () => {
                 borderColor: "#800e13",
               }}
             >
-              <div className="text-white text-4xl mb-2">
-                {service.icon}
-              </div>
+              <div className="text-white text-4xl mb-2">{service.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{service.name}</h3>
               <p className="text-sm">{service.description}</p>
+              <a
+                href={service.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 text-sm text-white underline hover:text-gray-200"
+              >
+                Read More
+              </a>
             </button>
           ))}
         </div>

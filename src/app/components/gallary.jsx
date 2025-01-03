@@ -34,11 +34,12 @@ export default function Gallery() {
       >
         {images.map((image, index) => (
           <div key={index} className="flex justify-center w-full flex-shrink-0">
+            
             <Image
               src={image}
               alt={`Slide ${index}`}
-              className="object-cover rounded-lg"
-              width={300}
+              className="object-cover "
+              width={500}
               height={250}
             />
           </div>

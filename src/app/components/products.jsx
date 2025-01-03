@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import Image from "next/image";
 import powder from "../asset/img/powder.jpg";
 import lipstick from "../asset/img/lipsticks.jpg";
@@ -30,14 +30,31 @@ const products = [
 ];
 
 export default function Products() {
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedProducts, setSelectedProducts] = useState([]);
+  const [message, setMessage] = useState("");
 
-  const handleProductSelection = (product) => {
-    setSelectedProduct(product);
+  const handleProductToggle = (product) => {
+    if (selectedProducts.some((p) => p.id === product.id)) {
+      setSelectedProducts((prev) => prev.filter((p) => p.id !== product.id));
+    } else {
+      setSelectedProducts((prev) => [...prev, product]);
+    }
+    setMessage(""); // Clear message when toggling selection
+  };
+
+  const handleProceedToPayment = () => {
+    if (selectedProducts.length === 0) {
+      setMessage("Please select a product.");
+    } else {
+      const paymentSection = document.getElementById("payment");
+      if (paymentSection) {
+        paymentSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   };
 
   return (
-    <section id="products" className="bg-gray-100">
+    <section id="products" className="bg-gray-100 py-8">
       <div className="container mx-auto px-4 sm:px-8">
         <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-4">
           Products
@@ -46,52 +63,50 @@ export default function Products() {
 
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {products.map((product) => (
-            <div key={product.id} className="flex flex-col">
-              <button
-                onClick={() => handleProductSelection(product)}
-                className={`flex flex-col bg-white border rounded-lg shadow-sm hover:shadow-lg transition-transform transform ${
-                  selectedProduct?.id === product.id
-                    ? "border-red-800 bg-orange-100 scale-105"
-                    : "border-gray-300 hover:scale-105"
-                } overflow-hidden`}
-              >
-                <div className="relative w-full h-48">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    className="object-cover"
-                    layout="fill"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    {product.name}
-                  </h3>
-                  <p className="text-gray-500 mt-2">{product.description}</p>
-                  <div className="mt-4 text-red-800 font-bold text-xl">
-                    ${product.price}
-                  </div>
-                </div>
-              </button>
-
-              {selectedProduct?.id === product.id && (
-                <div className="mt-4 bg-white p-4 rounded-lg shadow-md">
-                  <h3 className="text-xl font-bold text-gray-800">
-                    Selected Product:
-                  </h3>
-                  <p className="text-gray-600 mt-2">
-                    <strong>Name:</strong> {selectedProduct.name}
-                  </p>
-                  <p className="text-gray-600 mt-2">
-                    <strong>Description:</strong> {selectedProduct.description}
-                  </p>
-                  <p className="text-red-800 font-bold mt-2">
-                    <strong>Price:</strong> ${selectedProduct.price}
-                  </p>
-                </div>
-              )}
+            <div
+              key={product.id}
+              className="flex flex-col bg-white border rounded-lg shadow-sm overflow-hidden"
+            >
+              <div className="relative w-full h-48">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  className="object-cover"
+                  layout="fill"
+                />
+              </div>
+              <div className="p-4 flex flex-col items-center">
+                <h3 className="text-lg font-semibold text-gray-800 text-center">
+                  {product.name}
+                </h3>
+                <p className="text-gray-500 mt-2 text-center">
+                  {product.description}
+                </p>
+                <button
+                  onClick={() => handleProductToggle(product)}
+                  className={`mt-4 px-4 py-2 font-bold rounded transition ${
+                    selectedProducts.some((p) => p.id === product.id)
+                      ? "bg-red-800 text-white"
+                      : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                  }`}
+                >
+                  {selectedProducts.some((p) => p.id === product.id)
+                    ? "Selected"
+                    : `$${product.price}`}
+                </button>
+              </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-8 text-center">
+          {message && <p className="text-red-600 mb-2">{message}</p>}
+          <button
+            onClick={handleProceedToPayment}
+            className="px-6 py-3 bg-red-800 text-white font-bold rounded shadow hover:bg-red-700 transition"
+          >
+            Proceed to Payment
+          </button>
         </div>
       </div>
     </section>

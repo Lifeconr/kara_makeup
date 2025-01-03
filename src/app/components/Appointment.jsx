@@ -1,10 +1,12 @@
-"use client";
+'use client';
 
 import { useState } from "react";
 
 export default function AppointmentPage() {
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedHour, setSelectedHour] = useState("");
+  const [errorMessage, setErrorMessage] = useState({ date: "", hour: "" });
+  const [confirmationMessage, setConfirmationMessage] = useState("");
 
   const availableHours = [
     "8:10 - 10:00",
@@ -12,6 +14,32 @@ export default function AppointmentPage() {
     "12:10 - 14:00",
     "14:10 - 16:00"
   ];
+
+  const handleMakeAppointment = () => {
+    let hasError = false;
+
+    if (!selectedDate) {
+      setErrorMessage((prev) => ({ ...prev, date: "Please select a date." }));
+      hasError = true;
+    } else {
+      setErrorMessage((prev) => ({ ...prev, date: "" }));
+    }
+
+    if (!selectedHour) {
+      setErrorMessage((prev) => ({ ...prev, hour: "Please select an hour." }));
+      hasError = true;
+    } else {
+      setErrorMessage((prev) => ({ ...prev, hour: "" }));
+    }
+
+    if (!hasError) {
+      setConfirmationMessage(`You selected ${selectedDate} at ${selectedHour}.`);
+      const paymentSection = document.getElementById("payment");
+      if (paymentSection) {
+        paymentSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   return (
     <section id="appointment" className="py-8 bg-gray-100">
@@ -29,9 +57,16 @@ export default function AppointmentPage() {
               type="date"
               id="date"
               value={selectedDate}
-              onChange={(e) => setSelectedDate(e.target.value)}
+              onChange={(e) => {
+                setSelectedDate(e.target.value);
+                setErrorMessage((prev) => ({ ...prev, date: "" }));
+                setSelectedHour(""); // Deselect hour when date changes
+              }}
               className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-red-800 focus:outline-none"
             />
+            {errorMessage.date && (
+              <p className="text-red-600 text-sm mt-1">{errorMessage.date}</p>
+            )}
           </div>
           <div className="mb-6">
             <label htmlFor="hour" className="block text-sm font-medium text-gray-700 mb-2">
@@ -41,7 +76,10 @@ export default function AppointmentPage() {
               {availableHours.map((hour, index) => (
                 <button
                   key={index}
-                  onClick={() => setSelectedHour(hour)}
+                  onClick={() => {
+                    setSelectedHour((prevHour) => (prevHour === hour ? "" : hour)); // Toggle selection
+                    setErrorMessage((prev) => ({ ...prev, hour: "" }));
+                  }}
                   className={`py-2 px-4 text-sm font-medium border rounded-md transition-colors duration-200 ${
                     selectedHour === hour
                       ? "bg-red-800 text-white border-red-800"
@@ -52,11 +90,15 @@ export default function AppointmentPage() {
                 </button>
               ))}
             </div>
+            {errorMessage.hour && (
+              <p className="text-red-600 text-sm mt-1">{errorMessage.hour}</p>
+            )}
           </div>
+          {confirmationMessage && (
+            <p className="text-green-600 text-sm mb-4">{confirmationMessage}</p>
+          )}
           <button
-            onClick={() => {
-              // Add functionality for making an appointment
-            }}
+            onClick={handleMakeAppointment}
             className="w-full bg-red-800 text-white py-2 px-4 rounded-md font-semibold hover:bg-red-900 transition"
           >
             Make An Appointment
